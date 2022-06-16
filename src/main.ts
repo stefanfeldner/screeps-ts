@@ -49,17 +49,17 @@ export const loop = ErrorMapper.wrapLoop(() => {
   const builder = _.filter(Game.creeps, creep => creep.memory.role == "builder");
   const upgrader = _.filter(Game.creeps, creep => creep.memory.role == "upgrader");
 
-  if (harvesters.length < 2) {
+  if (harvesters.length < 4) {
     const newName = "Harvester" + Game.time;
     console.log("Spawning new harvester: " + newName);
     Game.spawns["Spawn1"].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: "harvester", working: false, room: 'hi' } });
   }
-  if (builder.length < 3) {
+  if (builder.length < 5) {
     const newName = "Builder" + Game.time;
     console.log("Spawning new builder: " + newName);
     Game.spawns["Spawn1"].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: "builder", working: false, room: 'hi' } });
   }
-  if (upgrader.length < 3) {
+  if (upgrader.length < 10) {
     const newName = "Upgrader" + Game.time;
     console.log("Spawning new upgrader: " + newName);
     Game.spawns["Spawn1"].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: "upgrader", working: false, room: 'hi' } });
