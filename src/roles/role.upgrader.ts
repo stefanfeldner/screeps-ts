@@ -1,5 +1,4 @@
 const roleUpgrader = {
-
   /** @param {Creep} creep **/
   run: function (creep: any) {
     if (creep.memory.upgrading && creep.store[RESOURCE_ENERGY] === 0) {
@@ -18,7 +17,7 @@ const roleUpgrader = {
     } else {
       const sources = creep.room.find(FIND_SOURCES);
       if (creep.harvest(sources[0]) === ERR_NOT_IN_RANGE) {
-        creep.moveTo(sources[0], { visualizePathStyle: { stroke: "#ffaa00" } });
+        creep.moveTo(sources[0], { visualizePathStyle: { stroke: "#2ECC71" } });
       }
     }
   }
